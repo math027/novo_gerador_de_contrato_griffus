@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro - Griffus Style</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../img/icone griffus.png" type="image/x-icon">
+</head>
+<body>
+    <div class="main-container">
+        <div class="header-strip">
+            <img src="../img/logo griffus png.webp" alt="Logo Griffus" class="logo">
+        </div>
+        <div class="content-body">
+            <form name="cadastro-griffus" method="POST" data-netlify="true" action="/obrigado.html">           
+                <fieldset>
+                    <legend>Dados da Empresa</legend>
+                    
+                    <div class="form-group">
+                        <label for="razaoSocial">Razão Social</label>
+                        <input type="text" id="razaoSocial" name="razaoSocial" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cnpj">CNPJ <span class="obs">*Somente números</span></label>
+                        <input type="number" id="cnpj" name="cnpj" placeholder="00.000.000/0000-00" maxlength="18">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cep">CEP <span class="obs">*Somente números</span></label>
+                        <input type="text" id="cep" name="cep" placeholder="00000-000" maxlength="9">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="endereco">Endereço</label>
+                        <input type="text" id="endereco" name="endereco">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bairro">Bairro</label>
+                        <input type="text" id="bairro" name="bairro">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" id="cidade" name="cidade">
+                    </div>
+
+                    <div class="form-group small">
+                        <label for="uf">UF</label>
+                        <input type="text" id="uf" name="uf" maxlength="2" style="text-transform: uppercase;">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefone">Telefone <span class="obs">*Somente números</span></label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(00) 0000-0000">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="celular">Celular <span class="obs">*Somente números</span></label>
+                        <input type="tel" id="celular" name="celular" placeholder="(00) 90000-0000">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="emailEmpresa">Email</label>
+                        <input type="email" id="emailEmpresa" name="emailEmpresa">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Dados Bancários</legend>
+
+                    <div class="form-group">
+                        <label for="banco">Banco</label>
+                        <input type="text" id="banco" name="banco" placeholder="Nome ou Código">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="agencia">Agência <span class="obs">*Somente números</span></label>
+                        <input type="text" id="agencia" name="agencia">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="conta">Conta <span class="obs">*Somente números</span></label>
+                        <input type="text" id="conta" name="conta">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pix">Chave PIX</label>
+                        <input type="text" id="pix" name="pix">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Dados do Sócio</legend>
+
+                    <div class="form-group full-width">
+                        <label for="nomeSocio">Nome Completo</label>
+                        <input type="text" id="nomeSocio" name="nomeSocio" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cpf">CPF <span class="obs">*Somente números</span></label>
+                        <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" maxlength="14">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rg">RG <span class="obs">*Somente números</span></label>
+                        <input type="text" id="rg" name="rg">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="orgaoExpedidor">Orgão Expedidor</label>
+                        <input type="text" id="orgaoExpedidor" name="orgaoExpedidor" style="text-transform: uppercase;">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dataEmissao">Data de Emissão</label>
+                        <input type="date" id="dataEmissao" name="dataEmissao">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nascimento">Data de Nascimento</label>
+                        <input type="date" id="nascimento" name="nascimento">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nacionalidade">Nacionalidade</label>
+                        <input type="text" id="nacionalidade" name="nacionalidade" value="Brasileira">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="estadoCivil">Estado Civil</label>
+                        <select id="estadoCivil" name="estadoCivil">
+                            <option value="">Selecione...</option>
+                            <option value="solteiro">Solteiro(a)</option>
+                            <option value="casado">Casado(a)</option>
+                            <option value="divorciado">Divorciado(a)</option>
+                            <option value="viuvo">Viúvo(a)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="profissao">Profissão</label>
+                        <input type="text" id="profissao" name="profissao">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="emailSocio">Email Pessoal</label>
+                        <input type="email" id="emailSocio" name="emailSocio">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Endereço Sócio</legend>
+
+                    <div class="form-group">
+                        <label for="cepSocio">CEP <span class="obs">*Somente números</span></label>
+                        <input type="text" id="cepSocio" name="cepSocio" maxlength="9">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="enderecoSocio">Endereço</label>
+                        <input type="text" id="enderecoSocio" name="enderecoSocio">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bairroSocio">Bairro</label>
+                        <input type="text" id="bairroSocio" name="bairroSocio">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cidadeSocio">Cidade</label>
+                        <input type="text" id="cidadeSocio" name="cidadeSocio">
+                    </div>
+
+                    <div class="form-group small">
+                        <label for="ufSocio">UF</label>
+                        <input type="text" id="ufSocio" name="ufSocio" maxlength="2" style="text-transform: uppercase;">
+                    </div>
+                </fieldset>
+
+                <div class="button-container">
+                    <button type="submit">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

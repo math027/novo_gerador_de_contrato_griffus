@@ -1,0 +1,187 @@
+:root {
+    --griffus-pink: #e91e63;       /* Cor principal vibrante */
+    --griffus-pink-dark: #c2185b;  /* Cor para hover */
+    --griffus-text-dark: #212121;  /* Texto principal */
+    --griffus-text-gray: #757575;  /* Texto secundário/labels */
+    --griffus-bg-light: #fafafa;   /* Fundo da página */
+    --griffus-border-subtle: #f8bbd0; /* Borda sutil rosada */
+    --input-border: #e0e0e0;
+    --focus-shadow: rgba(233, 30, 99, 0.25); /* Brilho rosa no foco */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Usando Poppins como fonte principal, se disponível */
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--griffus-bg-light);
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px;
+    color: var(--griffus-text-dark);
+}
+
+.main-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 850px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    /* Removemos o padding daqui e o border-top antigo */
+    padding: 0; 
+    overflow: hidden; /* Garante que o cabeçalho respeite o arredondamento */
+}
+
+.header-strip {
+    background-color: var(--griffus-pink); /* Fundo rosa para destacar o logo branco */
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: 4px solid var(--griffus-pink-dark); /* Um detalhe sutil na borda inferior */
+}
+
+.logo {
+    max-width: 220px; /* Tamanho controlado */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); /* Sombra leve para destacar o branco */
+}
+
+/* Container interno para dar espaçamento ao formulário */
+.content-body {
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .content-body {
+        padding: 20px;
+    }
+}
+
+fieldset {
+    /* Borda sutilmente rosada */
+    border: 1px solid var(--griffus-border-subtle);
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+legend {
+    font-size: 1.1rem;
+    font-weight: 600;
+    /* Títulos das seções na cor da marca */
+    color: var(--griffus-pink);
+    padding: 0 15px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Classes utilitárias para o grid */
+.full-width { grid-column: span 3; }
+.small { grid-column: span 1; }
+
+@media (max-width: 768px) {
+    fieldset {
+        grid-template-columns: 1fr;
+        padding: 15px;
+        gap: 15px;
+    }
+    .full-width, .small {
+        grid-column: span 1;
+    }
+    .main-container {
+        padding: 20px;
+    }
+}
+
+label {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: var(--griffus-text-gray);
+    font-weight: 500;
+}
+
+input, select {
+    padding: 12px 15px;
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    font-size: 1rem;
+    color: var(--griffus-text-dark);
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #fcfcfc;
+}
+
+/* Efeito de foco com a cor da marca */
+input:focus, select:focus {
+    border-color: var(--griffus-pink);
+    box-shadow: 0 0 0 4px var(--focus-shadow);
+    background-color: #fff;
+}
+
+input::placeholder {
+    color: #bdbdbd;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+button {
+    padding: 14px 40px;
+    /* Botão principal na cor rosa Griffus */
+    background-color: var(--griffus-pink);
+    color: white;
+    border: none;
+    border-radius: 30px; /* Botões mais arredondados (estilo moderno) */
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+}
+
+button:hover {
+    background-color: var(--griffus-pink-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Estilo para as observações ao lado do label */
+.obs {
+    font-size: 0.75rem;       /* Texto menor */
+    font-weight: 400;         /* Peso da fonte normal */
+    color: var(--griffus-pink); /* Usa a cor rosa da marca (ou use #999 para cinza) */
+    margin-left: 8px;         /* Espaçamento do título */
+    font-style: italic;       /* Deixa em itálico para diferenciar */
+}
+
+.logo-container {
+    text-align: center; /* Centraliza a imagem */
+    margin-bottom: 30px; /* Espaço entre o logo e o primeiro campo */
+}
+
+.logo {
+    max-width: 200px; /* Tamanho máximo para não estourar */
+    height: auto;     /* Mantém a proporção */
+    display: inline-block;
+}

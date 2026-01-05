@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrigado - Griffus Style</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../img/icone griffus.png" type="image/x-icon">
+    
+    <style>
+        .thank-you-content {
+            text-align: center;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .success-icon {
+            color: var(--griffus-pink);
+            font-size: 4rem; /* Tamanho do ícone */
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: var(--griffus-pink);
+            font-weight: 600;
+        }
+        p {
+            color: var(--griffus-text-gray);
+            max-width: 500px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="header-strip">
+            <img src="../img/logo griffus png.webp" alt="Logo Griffus" class="logo">
+        </div>
+
+        <div class="content-body">
+            <div class="thank-you-content">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--griffus-pink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+
+                <h2>Formulário preenchido!</h2>
+                
+                <p>Seus dados foram enviados com sucesso para nossa equipe.</p>
+                
+                <div class="button-container" style="justify-content: center;">
+                    <a href="forms.html" style="text-decoration: none;">
+                        <button type="button">Voltar ao Início</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

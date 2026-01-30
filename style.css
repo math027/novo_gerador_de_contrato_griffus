@@ -27,6 +27,7 @@ body {
 
 .main-container {
     background-color: #ffffff;
+    color: #ffffff;
     width: 100%;
     max-width: 850px;
     border-radius: 12px;
@@ -184,4 +185,59 @@ button:active {
     max-width: 200px; /* Tamanho máximo para não estourar */
     height: auto;     /* Mantém a proporção */
     display: inline-block;
+}
+
+/* Estilização Personalizada para Inputs de Arquivo */
+
+/* Esconde o input de arquivo padrão */
+input[type="file"] {
+    display: none;
+}
+
+/* Estilo para o botão de upload personalizado */
+.file-upload-label {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #f0f0f0;
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    color: var(--griffus-text-dark);
+    /* Garante que o botão não ultrapasse a largura do pai */
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Ícone de upload SVG embutido */
+.file-upload-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23757575"><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0; /* Impede que o ícone encolha */
+}
+
+/* Efeito de hover no botão de upload */
+.file-upload-label:hover {
+    background-color: #e0e0e0;
+    border-color: #c0c0c0;
+}
+
+/* Efeito de foco para acessibilidade (quando navegado via teclado) */
+input[type="file"]:focus + .file-upload-label {
+    border-color: var(--griffus-pink);
+    box-shadow: 0 0 0 2px var(--focus-shadow);
+}
+
+/* Estilo para o nome do arquivo selecionado */
+.file-name-display {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: var(--griffus-text-gray);
+    word-break: break-all; /* Quebra o nome do arquivo se for muito longo */
 }

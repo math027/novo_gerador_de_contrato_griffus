@@ -1,0 +1,7 @@
+Depois que o usuário preenche os dados no formulário, o documento word e excel é salvo formatado no drive.
+
+Formulário:
+https://novogeradordecontratos.netlify.app/
+
+Local onde o arquivo fica salvo (tem que mudar para o drive do RH)
+https://drive.google.com/drive/folders/1qNB12ZkYdIyjzHPSyxojXxXz4GiYGesB

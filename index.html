@@ -6,15 +6,17 @@
     <title>Formulário de Cadastro - Griffus Style</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="/img/icone griffus.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/icone griffus.png" type="image/x-icon">
 </head>
 <body>
     <div class="main-container">
         <div class="header-strip">
-            <img src="/img/logo griffus png.webp" alt="Logo Griffus" class="logo">
+            <img src="img/logo griffus png.webp" alt="Logo Griffus" class="logo">
+            <h2>Cadastro Representantes Comerciais</h2>
         </div>
         <div class="content-body">
-            <form name="cadastro-griffus" method="POST" data-netlify="true" action="/obrigado/obrigado.html">           
+            <form name="cadastro-griffus" method="POST" data-netlify="true" action="obrigado/obrigado.html" enctype="multipart/form-data">           
+                
                 <fieldset>
                     <legend>Dados da Empresa</legend>
                     
@@ -35,6 +37,11 @@
 
                     <div class="form-group full-width">
                         <label for="endereco">Endereço</label>
+                        <input type="text" id="endereco" name="endereco">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numero">Número</label>
                         <input type="text" id="endereco" name="endereco">
                     </div>
 
@@ -128,7 +135,7 @@
 
                     <div class="form-group">
                         <label for="nacionalidade">Nacionalidade</label>
-                        <input type="text" id="nacionalidade" name="nacionalidade" value="Brasileira">
+                        <input type="text" id="nacionalidade" name="nacionalidade" value="Brasileiro">
                     </div>
 
                     <div class="form-group">
@@ -167,6 +174,11 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="numeroSocio">Número</label>
+                        <input type="text" id="enderecoSocio" name="enderecoSocio">
+                    </div>
+
+                    <div class="form-group">
                         <label for="bairroSocio">Bairro</label>
                         <input type="text" id="bairroSocio" name="bairroSocio">
                     </div>
@@ -182,11 +194,100 @@
                     </div>
                 </fieldset>
 
+                <fieldset>
+                    <legend>Documentação - Empresa</legend>
+
+                    <div class="form-group">
+                        <label for="docContratoSocial">Contrato Social / MEI</label>
+                        <input type="file" id="docContratoSocial" name="docContratoSocial" accept=".pdf,.jpg,.jpeg,.png" onchange="updateFileName(this)">
+                        <label for="docContratoSocial" class="file-upload-label">
+                            <span class="file-upload-icon"></span>
+                            Selecionar arquivo
+                        </label>
+                        <span class="file-name-display" id="fileName-docContratoSocial">Nenhum arquivo selecionado</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="docEndEmpresa">Comprovante de Endereço</label>
+                        <input type="file" id="docEndEmpresa" name="docEndEmpresa" accept=".pdf,.jpg,.jpeg,.png" onchange="updateFileName(this)">
+                        <label for="docEndEmpresa" class="file-upload-label">
+                            <span class="file-upload-icon"></span>
+                            Selecionar arquivo
+                        </label>
+                        <span class="file-name-display" id="fileName-docEndEmpresa">Nenhum arquivo selecionado</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="docCartaoCnpj">Cartão CNPJ</label>
+                        <input type="file" id="docCartaoCnpj" name="docCartaoCnpj" accept=".pdf,.jpg,.jpeg,.png" onchange="updateFileName(this)">
+                        <label for="docCartaoCnpj" class="file-upload-label">
+                            <span class="file-upload-icon"></span>
+                            Selecionar arquivo
+                        </label>
+                        <span class="file-name-display" id="fileName-docCartaoCnpj">Nenhum arquivo selecionado</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="docCore">CORE</label>
+                        <input type="file" id="docCore" name="docCore" accept=".pdf,.jpg,.jpeg,.png" onchange="updateFileName(this)">
+                        <label for="docCore" class="file-upload-label">
+                            <span class="file-upload-icon"></span>
+                            Selecionar arquivo
+                        </label>
+                        <span class="file-name-display" id="fileName-docCore">Nenhum arquivo selecionado</span>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Documentação - Sócios</legend>
+
+                    <div class="form-group">
+                        <label for="docCpfSocio">CPF</label>
+                        <input type="file" id="docCpfSocio" name="docCpfSocio" accept=".pdf,.jpg,.jpeg,.png" onchange="updateFileName(this)">
+                        <label for="docCpfSocio" class="file-upload-label">
+                            <span class="file-upload-icon"></span>
+                            Selecionar arquivo
+                        </label>
+                        <span class="file-name-display" id="fileName-docCpfSocio">Nenhum arquivo selecionado</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="docIdentidadeSocio">Identidade (RG)</label>
+                        <input type="file" id="docIdentidadeSocio" name="docIdentidadeSocio" accept=".pdf,.jpg,.jpeg,.png" onchange="updateFileName(this)">
+                        <label for="docIdentidadeSocio" class="file-upload-label">
+                            <span class="file-upload-icon"></span>
+                            Selecionar arquivo
+                        </label>
+                        <span class="file-name-display" id="fileName-docIdentidadeSocio">Nenhum arquivo selecionado</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="docEndSocioComp">Comp. Endereço Sócio</label>
+                        <input type="file" id="docEndSocioComp" name="docEndSocioComp" accept=".pdf,.jpg,.jpeg,.png" onchange="updateFileName(this)">
+                        <label for="docEndSocioComp" class="file-upload-label">
+                            <span class="file-upload-icon"></span>
+                            Selecionar arquivo
+                        </label>
+                        <span class="file-name-display" id="fileName-docEndSocioComp">Nenhum arquivo selecionado</span>
+                    </div>
+                </fieldset>
+
                 <div class="button-container">
                     <button type="submit">Cadastrar</button>
                 </div>
             </form>
         </div>
     </div>
+
+    <script>
+        function updateFileName(input) {
+            const fileNameDisplay = document.getElementById('fileName-' + input.id);
+            if (input.files.length > 0) {
+                fileNameDisplay.textContent = input.files[0].name;
+            } else {
+                fileNameDisplay.textContent = 'Nenhum arquivo selecionado';
+            }
+        }
+    </script>
 </body>
 </html>
